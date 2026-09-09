@@ -25,5 +25,5 @@ Ensure the following prerequisites are met on the target Windows host:
 - Returns WARNING if the account is Locked Out (system triggered)
 - Returns CRITICAL if the account is Disabled (manually by admin)
 - Exit codes follow Nagios plugin standards: 0=OK, 1=WARNING, 2=CRITICAL, 3=UNKNOWN
-- Version: 2026/04/13
+- Version: 2026/09/09
 - [GitHub Repo](https://github.com/hytcloud/naemon-user-status.git)

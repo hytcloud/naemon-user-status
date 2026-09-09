@@ -12,7 +12,7 @@ username
 ad (boolean)
 
 .NOTES
-version : 2026/04/13
+version : 2026/09/09
 
 .LINK
 https://github.com/hytcloud/naemon-user-status.git
@@ -43,19 +43,19 @@ catch {
 }
 
 if ($null -eq $userStatus) {
-	Write-Host "UNKNOWN: $type User '$name' not found."
+	Write-Host "UNKNOWN: $type User '$name' not found. | user=0;;;;"
 	exit 3
 }
 
 if ($userStatus.Disabled -eq $true) {
-	Write-Host "CRITICAL: $type Account '$name' is Disabled"
+	Write-Host "CRITICAL: $type Account '$name' is Disabled | user=0;;;;"
 	exit 2
 }
 
 if ($userStatus.Lockout -eq $true) {
-	Write-Host "WARNING: $type Account '$name' is Locked Out"
+	Write-Host "WARNING: $type Account '$name' is Locked Out | user=0;;;;"
 	exit 1
 }
 
-Write-Host "OK: $type Account '$name' is Active"
+Write-Host "OK: $type Account '$name' is Active  | user=1;;;;"
 exit 0
